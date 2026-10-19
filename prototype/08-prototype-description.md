@@ -52,7 +52,7 @@ The completion dialog states “Demo complete · Nothing was sent.” It confirm
 
 The Privacy & Activity dialog describes intended data controls and shows sample activity records. Local-processing labels, preservation of originals and approval requirements express design intentions. Authentication, access control, persistent logs and network restrictions require technical verification. Deployment wording should cover an organisation-controlled server unless processing actually runs on the user’s device.
 
-Usability review will check whether participants can start a task, attach a file, find the result preview and recognise the email approval state. Keyboard navigation, focus behaviour, contrast and mobile layout also require evaluation. Findings should become tracked interface changes. These screenshots provide material for reviewing the interaction design; implementation and evaluation remain separate work.
+Usability review will check whether participants can start a task, attach a file, find the result preview and recognise the email approval state. Keyboard navigation, focus behaviour, contrast and mobile layout also require evaluation. Findings should become tracked interface changes. These screenshots provide material for reviewing the interaction design; implementation and evaluation remain separate work
 
 ![Figure 8.9 Demo completion without sending](../prototype/screenshots/09-email-flow-complete.png)
 
