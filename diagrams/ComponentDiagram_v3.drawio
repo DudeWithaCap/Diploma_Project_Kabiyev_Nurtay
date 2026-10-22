@@ -1,0 +1,93 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram id="architecture" name="Architecture">
+    <mxGraphModel dx="1549" dy="954" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1250" pageHeight="930" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="viCB-yS5iw3X2ySyZ91L-1" parent="1" style="whiteSpace=wrap;html=1;fillColor=none;" value="" vertex="1">
+          <mxGeometry height="660" width="1380" x="80" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="browser" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;spacing=8;" value="&lt;b&gt;User browser (local network)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="65" width="365" x="100" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;spacing=8;" value="&lt;b&gt;Web-gateway&lt;/b&gt;&lt;br&gt;FastAPI + web UI · auth&lt;br&gt;approvals UI · audit viewer" vertex="1">
+          <mxGeometry height="100" width="365" x="100" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="agent" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;fontColor=#000000;fontSize=14;align=center;verticalAlign=top;spacingTop=12;" value="&lt;b&gt;Agent-core — plan → call → observe loop · step budget · task state&lt;/b&gt;" vertex="1">
+          <mxGeometry height="320" width="640" x="100" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="adapter" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;spacing=8;" value="&lt;b&gt;LLM-adapter&lt;/b&gt;&lt;br&gt;one interface&lt;br&gt;many backends" vertex="1">
+          <mxGeometry height="100" width="185" x="120" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="reliability" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;spacing=8;" value="&lt;b&gt;Reliability Layer&lt;/b&gt;&lt;br&gt;validate · repair&lt;br&gt;retry · constrain" vertex="1">
+          <mxGeometry height="100" width="185" x="325" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="rag" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;spacing=8;" value="&lt;b&gt;RAG&lt;/b&gt;&lt;br&gt;ingest · embed&lt;br&gt;retrieve · cite" vertex="1">
+          <mxGeometry height="100" width="185" x="530" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="policy" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;spacing=8;" value="&lt;b&gt;Policy Engine&lt;/b&gt;&lt;div&gt;risk classes&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(237, 237, 237));&quot;&gt;·&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(237, 237, 237));&quot;&gt;taint tracking&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="185" x="120" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="approvals" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;spacing=8;" value="&lt;b&gt;Approvals Service&lt;/b&gt;&lt;br&gt;diff preview&lt;br&gt;confirm / reject" vertex="1">
+          <mxGeometry height="100" width="185" x="325" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="registry" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;spacing=8;" value="&lt;b&gt;Tool registry&lt;/b&gt;&lt;br&gt;MCP clients&lt;br&gt;schemas · risk tags" vertex="1">
+          <mxGeometry height="100" width="185" x="530" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="viCB-yS5iw3X2ySyZ91L-4" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.001;entryY=0.234;entryDx=0;entryDy=0;entryPerimeter=0;" target="agent" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="815" y="366.26" as="sourcePoint" />
+            <mxPoint x="750" y="368.74" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="llm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;spacing=8;" value="&lt;b&gt;LLM runtime&lt;/b&gt;&lt;br&gt;Ollama / vLLM&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="145" width="285" x="805" y="295" as="geometry" />
+        </mxCell>
+        <mxCell id="viCB-yS5iw3X2ySyZ91L-3" edge="1" parent="1" source="storage" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.004;entryY=0.772;entryDx=0;entryDy=0;entryPerimeter=0;" target="agent" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="750" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="storage" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;spacing=8;" value="&lt;b&gt;State and storage&lt;/b&gt;&lt;br&gt;Workspace volume&lt;br&gt;(allowlisted dirs, versions)&lt;div&gt;Tasks, approvals,&lt;br&gt;append-only audit · vector index&lt;/div&gt;" vertex="1">
+          <mxGeometry height="145" width="285" x="805" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="labeltools" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=#000000;fontSize=12;align=center;" value="&lt;b&gt;Tool servers (MCP): separate containers · no network · no-root · read-only FS&lt;/b&gt;" vertex="1">
+          <mxGeometry height="26" width="640" x="100" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="docx" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;spacing=8;" value="&lt;b&gt;tool-docx&lt;/b&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="76" width="193" x="100" y="665" as="geometry" />
+        </mxCell>
+        <mxCell id="xlsx" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;spacing=8;" value="&lt;b&gt;tool-xlsx&lt;/b&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="76" width="193" x="315" y="665" as="geometry" />
+        </mxCell>
+        <mxCell id="mail" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;spacing=8;" value="&lt;b&gt;tool-mail&lt;/b&gt;" vertex="1">
+          <mxGeometry height="76" width="210" x="530" y="665" as="geometry" />
+        </mxCell>
+        <mxCell id="egress" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;spacing=8;" value="&lt;b&gt;Egress monitor + negative control&lt;/b&gt;&lt;br&gt;0 packets may leave the perimeter" vertex="1">
+          <mxGeometry height="100" width="500" x="105" y="795" as="geometry" />
+        </mxCell>
+        <mxCell id="blocked" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;spacing=8;" value="&lt;b&gt;Internet / external AI APIs&lt;/b&gt;&lt;br&gt;BLOCKED at runtime" vertex="1">
+          <mxGeometry height="100" width="400" x="750" y="795" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="browser" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;endArrow=block;endFill=1;" target="gateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="gateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.5;endArrow=block;endFill=1;" target="agent">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="egress" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#000000;strokeWidth=1.5;dashed=1;endArrow=block;endFill=1;" target="blocked">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="viCB-yS5iw3X2ySyZ91L-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;spacing=8;" value="&lt;b&gt;tool-pptx&lt;/b&gt;" vertex="1">
+          <mxGeometry height="76" width="210" x="762" y="665" as="geometry" />
+        </mxCell>
+        <mxCell id="viCB-yS5iw3X2ySyZ91L-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;spacing=8;" value="&lt;b&gt;tool-csv&lt;/b&gt;" vertex="1">
+          <mxGeometry height="76" width="210" x="994" y="665" as="geometry" />
+        </mxCell>
+        <mxCell id="viCB-yS5iw3X2ySyZ91L-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontColor=#000000;fontSize=13;align=center;verticalAlign=middle;spacing=8;" value="&lt;b&gt;tool-pdf&lt;/b&gt;" vertex="1">
+          <mxGeometry height="76" width="210" x="1226" y="665" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
