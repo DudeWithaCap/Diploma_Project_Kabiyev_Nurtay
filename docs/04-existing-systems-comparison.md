@@ -1,6 +1,6 @@
-# 6. Existing Systems Comparison
+# 4. Existing Systems Comparison
 
-## 6.1. Purpose and selection of systems
+## 4.1. Purpose and selection of systems
 
 This section compares the proposed Local AI Agent with four existing solutions: AnythingLLM, LibreChat, OpenClaw, and GenOffice. These systems represent different approaches to self-hosted AI workspaces, conversational agents, tool automation, and AI-assisted office document editing. The comparison applies nine consistent criteria to identify relevant capabilities and differences in deployment and intended use.
 
@@ -8,9 +8,9 @@ The proposed product targets enterprise organizations that need an almost out-of
 
 The purpose of this review is to assess how existing products address these requirements and to identify the integration, deployment, and governance work needed to provide a cohesive enterprise solution. The findings are based on publicly available product documentation, not hands-on benchmarks; capabilities may differ by configuration and installed extensions.
 
-## 6.2. Overview of existing systems
+## 4.2. Overview of existing systems
 
-### 6.2.1. AnythingLLM
+### 4.2.1. AnythingLLM
 
 Website: https://anythingllm.com/  
 Documentation: https://docs.anythingllm.com/
@@ -19,7 +19,7 @@ AnythingLLM provides an AI workspace with document attachment, retrieval-augment
 
 Relevance and limitation for this comparison: AnythingLLM provides many of the underlying capabilities needed for office automation. A narrowly specified workflow for reliably producing, validating, reviewing, and emailing DOCX/XLSX/PPTX artifacts may nevertheless require selecting or developing additional skills and integrations. This is an integration-and-validation question, not evidence that AnythingLLM cannot perform those operations.
 
-### 6.2.2. LibreChat
+### 4.2.2. LibreChat
 
 Website: https://www.librechat.ai/  
 Documentation: https://www.librechat.ai/docs
@@ -28,7 +28,7 @@ LibreChat is a self-hosted conversational AI application that supports configura
 
 Relevance and limitation for this comparison: LibreChat is a close architectural alternative to a web-based local AI assistant. It supplies general agent and tool infrastructure, while a particular office automation workflow—including artifact validation and review-before-send email—depends on the tools, policies, and user experience configured for the installation. Therefore, the proposed system cannot be justified merely by claiming that LibreChat lacks agents, RAG, or local models.
 
-### 6.2.3. OpenClaw
+### 4.2.3. OpenClaw
 
 Website: https://openclaw.ai/  
 Documentation: https://docs.openclaw.ai/
@@ -37,7 +37,7 @@ OpenClaw is a self-hosted agent platform oriented toward tool-enabled action acr
 
 Relevance and limitation for this comparison: OpenClaw is a strong reference for agent orchestration, external integrations, and execution control. Its broad capabilities can be adapted to office tasks. The proposed project instead aims to develop and evaluate a smaller, explicitly bounded set of document and email operations. That narrower scope is a design choice, not proof of greater security or superior performance.
 
-### 6.2.4. GenOffice
+### 4.2.4. GenOffice
 
 Website: https://genoffice.ai/  
 Repository: https://github.com/genspark-ai/genoffice
@@ -46,7 +46,7 @@ GenOffice is an open-source desktop-oriented AI office suite for editing and cre
 
 Relevance and limitation for this comparison: GenOffice is particularly relevant for assessing output quality, document compatibility, and user review of edits. Unlike the proposed centrally hosted web-based assistant, GenOffice is primarily presented as a desktop office editing environment. This difference does not establish that its capabilities cannot be automated or extended; it establishes a difference in default product architecture and interaction model.
 
-## 6.3. Comparison criteria and method
+## 4.3. Comparison criteria and method
 
 Nine criteria were selected from the proposed system's functional and non-functional requirements:
 
@@ -62,7 +62,7 @@ Nine criteria were selected from the proposed system's functional and non-functi
 
 Interpretation: Documented = the official documentation supports the capability; Configurable = attainable with additional setup, tools, or model infrastructure; Scope-dependent = partial coverage or insufficient documentation for the complete workflow; Planned = a proposed requirement that has not yet been demonstrated in our prototype. No entry represents a verified benchmark result. An externally hosted model can negate local-inference privacy benefits even when the user interface itself is self-hosted.
 
-## 6.4. Comparative feature matrix
+## 4.4. Comparative feature matrix
 
 | Criterion | AnythingLLM | LibreChat | OpenClaw | GenOffice | Proposed system |
 |---|---|---|---|---|---|
@@ -78,7 +78,7 @@ Interpretation: Documented = the official documentation supports the capability;
 
 Evidence basis: Official product and technical documentation for AnythingLLM, LibreChat, OpenClaw, and GenOffice. The matrix distinguishes documented features from extensibility; it must not be interpreted as a ranking of actual task quality.
 
-## 6.5. Identified gaps and limits of the comparison
+## 4.5. Identified gaps and limits of the comparison
 
 The review shows that none of the proposed system's individual building blocks is fundamentally new. Existing products already offer local-model connectivity, RAG, agent tools, office document handling, or approval mechanisms. The strongest overlap is with AnythingLLM and LibreChat for the AI workspace architecture, OpenClaw for tool execution, and GenOffice for native office artifact editing.
 
@@ -88,7 +88,7 @@ The relevant engineering problem is more specific: designing an end-to-end, test
 
 A further limitation is that the current comparison relies on vendors' own documentation. It does not establish actual privacy compliance, deployment cost, generated-document quality, security, usability, or task success. Those claims require a controlled evaluation.
 
-## 6.6. Justification for the proposed solution
+## 4.6. Justification for the proposed solution
 
 The proposed solution addresses a practical enterprise adoption problem: organizations may want the productivity benefits of AI but restrict public AI services because confidential information would be processed outside their controlled environment. The proposed solution aims to make privately deployed AI office automation available as an integrated, nearly out-of-the-box product, rather than requiring each organization to assemble models, agent frameworks, office tools, and safeguards independently.
 
@@ -104,7 +104,7 @@ Unlike a general-purpose agent toolkit, the proposed product will prioritize a c
 
 The planned implementation uses FastAPI, PostgreSQL, React, Docker, locally hosted open-weight LLMs, RAG, and dedicated document/email tools. These are planned capabilities, not verified features of a completed product. Keeping inference local supports confidentiality goals, but legal compliance and security still require appropriate access controls, infrastructure operations, and organizational review.
 
-### 6.6.1. Proposed evaluation
+### 4.6.1. Proposed evaluation
 
 Evaluation will focus on whether the system meets its enterprise deployment, data-control, and office productivity objectives, rather than on having more features than established competitors. The following measurable criteria are proposed:
 
@@ -121,7 +121,7 @@ Evaluation will focus on whether the system meets its enterprise deployment, dat
 
 Representative scenarios should include generating a DOCX report from confidential source files, producing an XLSX analysis from internal data, creating a PPTX presentation, and preparing an email with a generated attachment for user approval. Where feasible, the same scenarios should be tested in selected existing systems under documented configurations. This would allow evaluation of setup effort, task success, and data-handling behavior without presuming that competitors lack these capabilities.
 
-## 6.7. Conclusion
+## 4.7. Conclusion
 
 The review confirms that AnythingLLM, LibreChat, OpenClaw, and GenOffice already provide many capabilities relevant to AI-assisted office work. However, enterprise customers need more than access to individual AI features: they need a solution that their IT teams can deploy and govern on company-controlled infrastructure, with confidential data kept away from external AI providers during routine processing.
 
