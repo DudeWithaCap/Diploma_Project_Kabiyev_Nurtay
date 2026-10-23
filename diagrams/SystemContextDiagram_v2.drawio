@@ -1,0 +1,152 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram name="System Context" id="context">
+    <mxGraphModel dx="1751" dy="1078" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1480" pageHeight="1020" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="user" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;align=center;verticalAlign=middle;spacing=10;fontSize=16;strokeWidth=1.5;" value="&lt;b&gt;User&lt;/b&gt;&lt;font style=&quot;font-size:12px&quot;&gt;&lt;br&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="75" width="250" x="50" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="assistant" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;align=center;verticalAlign=middle;spacing=10;fontSize=16;strokeWidth=1.5;" value="&lt;b&gt;Local AI Agent&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot;&gt;Web application powered by local LLM&lt;br&gt;for officer related tasks and Email correspondence&lt;br&gt;in an isolated environment&lt;/font&gt;" vertex="1">
+          <mxGeometry height="210" width="350" x="525" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="llm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;align=center;verticalAlign=middle;spacing=10;fontSize=16;strokeWidth=1.5;" value="&lt;b&gt;Local LLM&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot;&gt;Ollama / vLLM&lt;br&gt;Model runs on a local server / GPU&lt;/font&gt;" vertex="1">
+          <mxGeometry height="110" width="270" x="565" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="tools" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;align=center;verticalAlign=middle;spacing=10;fontSize=16;strokeWidth=1.5;dashed=1;dashPattern=6 4;" value="" vertex="1">
+          <mxGeometry height="412" width="520" x="1050" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="word" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;align=center;verticalAlign=middle;spacing=10;fontSize=16;strokeWidth=1.5;" value="&lt;b&gt;MCP for Word&lt;/b&gt;&lt;font style=&quot;font-size:12px&quot;&gt;&lt;br&gt;Read and edit .docx files&lt;/font&gt;" vertex="1">
+          <mxGeometry height="112" width="230" x="1070" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="excel" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;align=center;verticalAlign=middle;spacing=10;fontSize=16;strokeWidth=1.5;" value="&lt;b&gt;MCP for Excel&lt;/b&gt;&lt;font style=&quot;font-size:12px&quot;&gt;&lt;br&gt;Read and edit .xlsx files&lt;/font&gt;" vertex="1">
+          <mxGeometry height="112" width="230" x="1070" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="email" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;align=center;verticalAlign=middle;spacing=10;fontSize=16;strokeWidth=1.5;" value="&lt;b&gt;MCP for Email&lt;/b&gt;&lt;font style=&quot;font-size:12px&quot;&gt;&lt;br&gt;Read and send emails&lt;br&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="112" width="230" x="1070" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="db" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;align=center;verticalAlign=middle;spacing=10;fontSize=16;strokeWidth=1.5;" value="&lt;b&gt;Database&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:12px&quot;&gt;SQLite (for 1–5 users)&lt;br/&gt;Tasks, conversation history,&lt;br/&gt;approvals, audit, settings&lt;/font&gt;" vertex="1">
+          <mxGeometry height="142" width="330" x="240" y="675" as="geometry" />
+        </mxCell>
+        <mxCell id="fs" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;align=center;verticalAlign=middle;spacing=10;fontSize=16;strokeWidth=1.5;" value="&lt;b&gt;File Storage (Workspace)&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:12px&quot;&gt;Local file system&lt;br/&gt;Uploaded and generated files,&lt;br/&gt;versions, RAG indexes&lt;/font&gt;" vertex="1">
+          <mxGeometry height="142" width="330" x="680" y="675" as="geometry" />
+        </mxCell>
+        <mxCell id="internet" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;align=center;verticalAlign=middle;spacing=10;fontSize=16;strokeWidth=1.5;" value="&lt;b&gt;Internet / External AI APIs&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:12px&quot;&gt;e.g., OpenAI, external email&lt;br/&gt;BLOCKED&lt;/font&gt;" vertex="1">
+          <mxGeometry height="105" width="335" x="1080" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="u_a" edge="1" parent="1" source="user" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.7;endArrow=block;endFill=1;fontColor=#000000;fontSize=12;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.36;entryX=0;entryY=0.36;" target="assistant" value="Requests (natural language)&lt;br/&gt;Files (Word, Excel)&lt;br/&gt;Email instructions&lt;br/&gt;Action approvals">
+          <mxGeometry relative="1" x="-0.179" y="-57" as="geometry">
+            <mxPoint x="57" y="-57" as="offset" />
+            <Array as="points">
+              <mxPoint x="400" y="337" />
+              <mxPoint x="400" y="355.6" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a_u" edge="1" parent="1" source="assistant" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.7;endArrow=block;endFill=1;fontColor=#000000;fontSize=12;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.73;entryX=1;entryY=0.73;" target="user" value="Results&lt;br/&gt;Answers, modified files&lt;br/&gt;Summaries, email drafts&lt;br/&gt;Notifications, action logs">
+          <mxGeometry relative="1" x="-0.2845" y="57" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a_l" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.7;endArrow=block;endFill=1;fontColor=#000000;fontSize=12;labelBackgroundColor=#FFFFFF;exitX=0.42;exitY=0;entryX=0.42;entryY=1;" value="Model requests&lt;br/&gt;(prompts, context)">
+          <mxGeometry relative="1" x="0.2908" y="64" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="634.4" y="280" />
+            </Array>
+            <mxPoint x="627.9999999999998" y="280.0000000000001" as="sourcePoint" />
+            <mxPoint x="634.3999999999999" y="230.0000000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l_a" edge="1" parent="1" source="llm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.7;endArrow=block;endFill=1;fontColor=#000000;fontSize=12;labelBackgroundColor=#FFFFFF;exitX=0.70;exitY=1;entryX=0.70;entryY=0;" target="assistant" value="Model responses&lt;br/&gt;(text, tool calls)">
+          <mxGeometry relative="1" x="0.2424" y="70" as="geometry">
+            <mxPoint y="-5" as="offset" />
+            <Array as="points">
+              <mxPoint x="754" y="250" />
+              <mxPoint x="770" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a_w" edge="1" parent="1" source="assistant" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.7;endArrow=block;endFill=1;fontColor=#000000;fontSize=12;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.25;entryX=0;entryY=0.50;" target="word" value="Tool calls&lt;br/&gt;(via MCP)">
+          <mxGeometry relative="1" x="0.4511" y="26" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="960" y="332.5" />
+              <mxPoint x="960" y="236" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="w_a" edge="1" parent="1" source="word" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.7;endArrow=block;endFill=1;fontColor=#000000;fontSize=12;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.75;entryX=1;entryY=0.37;" target="assistant" value="Tool results">
+          <mxGeometry relative="1" x="-0.0059" y="38" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a_ex" edge="1" parent="1" source="assistant" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.7;endArrow=block;endFill=1;fontColor=#000000;fontSize=12;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.55;entryX=0;entryY=0.5;" target="excel" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ex_a" edge="1" parent="1" source="excel" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.7;endArrow=block;endFill=1;fontColor=#000000;fontSize=12;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.7;entryX=1;entryY=0.65;" target="assistant" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="990" y="393.4" />
+              <mxPoint x="990" y="416.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a_em" edge="1" parent="1" source="assistant" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.7;endArrow=block;endFill=1;fontColor=#000000;fontSize=12;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.86;entryX=0;entryY=0.5;" target="email" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="em_a" edge="1" parent="1" source="email" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.7;endArrow=block;endFill=1;fontColor=#000000;fontSize=12;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.7;entryX=1;entryY=0.94;" target="assistant" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a_db" edge="1" parent="1" source="assistant" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.7;endArrow=block;endFill=1;fontColor=#000000;fontSize=12;labelBackgroundColor=#FFFFFF;exitX=0.13;exitY=1;entryX=0.73;entryY=0;" target="db" value="Save data&lt;br/&gt;(tasks, logs, audit)">
+          <mxGeometry relative="1" x="-0.177" y="47" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="570.5" y="600" />
+              <mxPoint x="480.9" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="db_a" edge="1" parent="1" source="db" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.7;endArrow=block;endFill=1;fontColor=#000000;fontSize=12;labelBackgroundColor=#FFFFFF;exitX=0.52;exitY=0;entryX=0.05;entryY=1;" target="assistant" value="Read data&lt;br/&gt;(history, settings)">
+          <mxGeometry relative="1" x="-0.5252" y="62" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a_fs" edge="1" parent="1" source="assistant" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.7;endArrow=block;endFill=1;fontColor=#000000;fontSize=12;labelBackgroundColor=#FFFFFF;exitX=0.82;exitY=1;entryX=0.25;entryY=0;" target="fs" value="Save files&lt;br/&gt;(outputs, versions)">
+          <mxGeometry relative="1" x="-0.2111" y="47" as="geometry">
+            <mxPoint x="-19" y="38" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fs_a" edge="1" parent="1" source="fs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.7;endArrow=block;endFill=1;fontColor=#000000;fontSize=12;labelBackgroundColor=#FFFFFF;exitX=0.08;exitY=0;entryX=0.64;entryY=1;" target="assistant" value="Read files&lt;br/&gt;(analysis, RAG)">
+          <mxGeometry relative="1" x="-0.1872" y="42" as="geometry">
+            <mxPoint x="16" y="-33" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="blocked" edge="1" parent="1" source="fs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;strokeWidth=1.7;endArrow=block;endFill=1;fontColor=#000000;fontSize=12;labelBackgroundColor=#FFFFFF;dashed=1;dashPattern=6 4;endArrow=none;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="internet" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cross" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;fontSize=31;" value="&lt;b&gt;×&lt;/b&gt;" vertex="1">
+          <mxGeometry height="38" width="40" x="1035" y="717" as="geometry" />
+        </mxCell>
+        <mxCell id="blockednote" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;fontSize=12;" value="Blocked (no outbound traffic&lt;br/&gt;during system operation)" vertex="1">
+          <mxGeometry height="42" width="350" x="1070" y="797" as="geometry" />
+        </mxCell>
+        <mxCell id="flow" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;align=center;verticalAlign=middle;spacing=10;fontSize=16;strokeWidth=1.5;dashed=1;dashPattern=6 4;" value="&lt;b&gt;Main Data Flows&lt;/b&gt;&lt;br/&gt;&lt;font style=&quot;font-size:12px&quot;&gt;1. User submits a request and files to the Local AI Assistant.&lt;br/&gt;2. The system uses the local LLM to plan and generate tool calls.&lt;br/&gt;3. The system calls MCP servers (Word, Excel, Email) to perform operations.&lt;br/&gt;4. Results are saved in the database and file storage.&lt;br/&gt;5. User receives answers, files, and notifications in the web interface.&lt;/font&gt;" vertex="1">
+          <mxGeometry height="133" width="890" x="340" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="vHfDgAWqrDmLhpqA9lZE-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontStyle=1;fontSize=18;" value="Tools" vertex="1">
+          <mxGeometry height="30" width="60" x="1050" y="127" as="geometry" />
+        </mxCell>
+        <mxCell id="vHfDgAWqrDmLhpqA9lZE-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;align=center;verticalAlign=middle;spacing=10;fontSize=16;strokeWidth=1.5;" value="&lt;b&gt;MCP for PPTX&lt;/b&gt;&lt;font style=&quot;font-size:12px&quot;&gt;&lt;br&gt;Read and edit .pptx files&lt;/font&gt;" vertex="1">
+          <mxGeometry height="112" width="230" x="1315" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="vHfDgAWqrDmLhpqA9lZE-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;align=center;verticalAlign=middle;spacing=10;fontSize=16;strokeWidth=1.5;" value="&lt;b&gt;MCP for CSV&lt;/b&gt;&lt;font style=&quot;font-size:12px&quot;&gt;&lt;br&gt;Read and edit .csv files&lt;/font&gt;" vertex="1">
+          <mxGeometry height="112" width="230" x="1315" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="vHfDgAWqrDmLhpqA9lZE-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontColor=#000000;align=center;verticalAlign=middle;spacing=10;fontSize=16;strokeWidth=1.5;" value="&lt;b&gt;MCP for PDF&lt;/b&gt;&lt;font style=&quot;font-size:12px&quot;&gt;&lt;br&gt;Read and edit .pdf files&lt;br&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="112" width="230" x="1315" y="450" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
