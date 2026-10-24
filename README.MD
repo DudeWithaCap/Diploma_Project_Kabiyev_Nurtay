@@ -9,6 +9,7 @@ KZ: Құпиялылыққа жоғары талаптар қойылатын к
 Institution: Astana IT University, School of Software Engineering  
 Supervisor: Almas Ospanov, Senior Lecturer  
 Team: Adilet Kabiyev (SE-2415) · Aibek Nurtay (SE-2405)
+Youtrack: https://diplomaproject.youtrack.cloud/projects/101
 
 ## About the Project
 
