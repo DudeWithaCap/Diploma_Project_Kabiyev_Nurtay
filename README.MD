@@ -1,104 +1,137 @@
-# Part 1 — Project Proposal
+# Local AI Office Agent
 
-**Project:** Development of a Local AI Agent for Automated Processing of Office Documents (Word, Excel) and Email Correspondence in Confidentiality-Sensitive Corporate Environments
+EN: Development of a Local AI Agent for Automated Processing of Office Documents (Word, Excel) and Email Correspondence in Confidentiality-Sensitive Corporate Environments
 
-**Institution:** Astana IT University - School of Software Engineering 
+RU: Разработка локального ИИ-агента для автоматизированной обработки офисных документов (Word, Excel) и электронной переписки в корпоративных средах с повышенными требованиями к конфиденциальности
 
-**Team:** Adilet Kabiyev (SE-2415); Aibek Nurtay (SE-2405)  
+KZ: Құпиялылыққа жоғары талаптар қойылатын корпоративтік ортада кеңсе құжаттарын (Word, Excel) және электрондық хат алмасуды автоматтандырылған өңдеуге арналған жергілікті ЖИ агентін әзірлеу
 
-**Supervisor:** Almas Ospanov, Senior Lecturer  
+Institution: Astana IT University, School of Software Engineering  
+Supervisor: Almas Ospanov, Senior Lecturer  
+Team: Adilet Kabiyev (SE-2415) · Aibek Nurtay (SE-2405)
 
+## About the Project
 
-## 1.1 Project Overview and Team
+Organisations handling confidential information may restrict the use of external AI services. This diploma project investigates a self-hosted office assistant that processes documents, spreadsheets and email using a locally hosted language model and controlled tools.
 
-This diploma project proposes a self-hosted AI office assistant that supports common office workflows through natural-language requests. Users will interact with a local web application, submit documents, inspect agent actions and generated artifacts, and approve sensitive operations before execution. The main use cases include Word, Excel, CSV, PDF, and PowerPoint files, as well as business email correspondence.
+Users will submit natural-language tasks through a web interface, inspect generated files and approve sensitive actions before execution. The research focuses on tool-call reliability and protection against unauthorised actions, including those induced by prompt injection. Security and confidentiality properties will be evaluated through reproducible tests.
 
-The system will use an open-weight language model hosted within a controlled environment and deterministic tools for file and email operations. An agent orchestration layer will coordinate tasks, while independent validation, authorization, approval, auditing and network-isolation mechanisms will limit unsafe behavior. The project will evaluate not only whether office tasks can be completed, but also whether tool invocation is reliable and confidentiality controls can be tested.
+## Current Status
 
-### Team and proposed division of work
+Stage: analysis, design and initial project scaffolding.
 
-| Member | Proposed responsibility |
-|---|---|
-| Adilet Kabiyev | Agent core; LLM adapter; tool-call reliability; local RAG; benchmarking, CI/CD pipeline and Observability stack |
-| Aibek Nurtay | Web gateway and UI; Word/Excel/email tools; policy and approval services; audit; workspace isolation; security and deployment |
-| Both students | Tool contracts and MCP registry, observability, requirements, integration, documentation and peer review |
+All eleven documentation components are completed for the current checkpoint. The repository includes project documentation, editable architecture diagrams, interface prototype screenshots and the supervisor feedback log.
 
-The supervisor provides technical and methodological guidance.
+The initial versions of the requirements, architecture and evaluation plan were accepted in Supervisor Review 2. In the table below, Completed refers to the documentation deliverable for this checkpoint. Application implementation and experimental verification remain separate milestones.
 
-## 1.2 Problem Statement
+Initial frontend and backend scaffolding is covered by task `101-20`. Prototype screenshots illustrate intended interactions. End-to-end AI workflows and the stated performance targets have not yet been validated.
 
-Large language models and AI agents can accelerate routine office work, such as reviewing contracts, analyzing spreadsheets, preparing presentations and drafting business correspondence. However, organizations handling sensitive corporate information may restrict or prohibit external AI assistants because using them can involve transmitting documents, emails or personal data to third-party infrastructure. Such restrictions may arise from internal information-security policies, contractual obligations and applicable legal requirements.
+## Documentation
 
-Data protection and legal requirements in Kazakhstan create additional constraints. The Law of the Republic of Kazakhstan On Personal Data and Their Protection (No. 94-V) governs the collection, processing and protection of personal data. In particular, Article 12 addresses the storage of personal data in databases or digital objects located in Kazakhstan, while Article 16 establishes conditions for cross-border transfers. The Law On Artificial Intelligence (No. 230-VIII, 17 November 2025), Article 10, also requires data protection and confidentiality measures when AI systems process personal information. As office documents and corporate correspondence may contain employee, customer or other protected information, organizations need to assess where such data is processed, which parties can access it, and whether external transfers are permitted. These provisions do not amount to a universal prohibition on cloud AI; obligations depend on the information, purposes and arrangements involved.
+Documentation is maintained in [docs/](docs/), with supporting [diagrams](diagrams/) and [prototype materials](prototype/).
 
-Internal corporate security policies may impose stricter limits than the minimum legal requirements. An organization may ban publicly hosted AI chatbots and agents altogether, authorize only specifically reviewed enterprise tools, or prohibit the upload of source code, contracts, customer records, financial reports and other confidential files. These decisions can reflect trade-secret protection, contractual nondisclosure commitments, vendor-risk assessments, data-classification rules, retention policies, and limited visibility into how external AI platforms handle information. Consequently, employees may lose access to useful AI-assisted workflows even when a particular external service has privacy or enterprise-security features. The prevalence and exact form of these restrictions will be investigated through the stakeholder interviews described in Part 2 rather than assumed in advance.
+| No. | Component | Status |
+| --- | --- | --- |
+| 01 | Project Proposal | Completed |
+| 02 | [Relevance Evidence](docs/02-relevance-evidence.md) | Completed |
+| 03 | [Literature Review](docs/03-literature-review.md) | Completed |
+| 04 | Existing Systems Comparison | Completed |
+| 05 | Technology Comparison and Selection | Completed |
+| 06 | Requirements Specification | Completed |
+| 07 | Architecture Design and [Diagrams](diagrams/) | Completed |
+| 08 | Interface Prototype and [Screenshots](prototype/) | Completed |
+| 09 | Verification and Evaluation Plan | Completed |
+| 10 | Project Management and Risks | Completed |
+| 11 | [Supervisor Feedback Log](docs/11-supervisor-feedback-log.md) | Completed |
 
-Running an open-weight model locally reduces reliance on external AI APIs but does not, by itself, make an agent safe. Smaller local models may produce invalid tool calls or incorrect calculations; documents and incoming emails can contain prompt-injection instructions; and tools with broad permissions may modify files or send messages without adequate checks. Claims that data remains inside an organization's infrastructure also require technical verification rather than assumption.
+## Research Questions
 
-The problem addressed by this project is therefore the need for an accessible, locally deployable office AI agent whose task execution is both reliable and subject to verifiable confidentiality and action-control mechanisms. The project will investigate how a tool-call reliability layer, explicit policies, human approval, audit logging and network isolation can address these limitations.
+- RQ1 — Reliability: Do schema validation, corrective feedback, bounded retries and constrained decoding improve tool-call validity and end-to-end task completion compared with native tool calling?
+- RQ2 — Security: How effectively do independent policy enforcement, explicit user approval and handling of untrusted content prevent unauthorised actions and reduce prompt-injection success?
 
-## 1.3 Target Users and Stakeholders
+The evaluation plan defines reliability configurations C0–C4, security configurations D0–D3, artifact checks and reproducibility procedures. Acceptance thresholds are criteria for future experiments, not achieved results.
 
-The target users are employees and professionals who perform everyday office work, including administrative staff, analysts, managers, HR specialists, finance personnel and technical employees. The system is particularly relevant in organizations with confidentiality requirements or internal restrictions on external AI services.
+## Scope
 
-The application defines one human actor: User. Professional background does not determine a separate role or a different set of product features. Every user has full functional access to their own AI agent and authorized workspace, including document processing, email drafting and approval, task history and agent settings. File isolation, organizational security policies and mandatory approval for sensitive actions still apply. Organizations provide the operational context for deployment, rather than a separate user or stakeholder role in this proposal.
+The current scope and priorities are:
 
-## 1.4 Project Aim
+| Priority | Capabilities |
+| --- | --- |
+| Must | DOCX workflows; XLSX and CSV through a shared tabular tool; email workflows through IMAP/SMTP, Gmail API and Microsoft Graph for Outlook |
+| Should | Read-only PDF text extraction; basic local RAG |
+| Could | PPTX generation from structured outlines and templates; LoRA adaptation |
+| Outside the current scope | OCR |
 
-To design, implement and experimentally evaluate a locally deployable AI office assistant for DOCX, XLSX, CSV, PDF, PPTX, and email workflows that uses no external AI APIs during core inference and document processing, improves the reliability of LLM-generated tool calls, and enforces verifiable safeguards against unauthorized actions and data disclosure.
+The intended deployment is on organisation-controlled infrastructure, with local AI inference. Email integrations will connect to configured mail services through IMAP/SMTP, Gmail API or Microsoft Graph for Outlook. A local mail server will be used as a development and testing environment, rather than as the only supported deployment option.
 
-## 1.5 Project Objectives
+External AI inference APIs are excluded from the product and may be used only in explicitly enabled evaluation experiments with synthetic data. This restriction concerns AI inference services; Gmail API and Microsoft Graph are planned email integrations.
 
-1. Analyze relevant research, existing local/cloud AI assistants, office automation tools and security threats to tool-using LLM agents.
-2. Define measurable functional and security requirements; prepare synthetic office-task datasets and evaluation procedures.
-3. Compare candidate local LLMs and runtimes under the team's actual hardware constraints using a reproducible benchmark.
-4. Design a modular agent with a replaceable LLM adapter, dedicated Word/Excel/CSV/PDF/PowerPoint and email tools, and basic local RAG.
-5. Implement a tool-call reliability layer using schema validation, bounded repair/retry and supported structured-output constraints.
-6. Implement deterministic risk-based authorization, human approval, workspace isolation, audit logging and controls against prompt injection and unauthorized network access.
-7. Evaluate task success, tool-call validity, security behavior, latency and resource use; report successes, failures and limitations.
+Provider accounts will require explicit authorisation, appropriately scoped permissions and protected credentials. Sending a message through any provider will require user approval bound to the exact recipients, content and attachments.
 
-## 1.6 Research Questions and Hypotheses
+The scope above guides the requirements, technology choices, architecture and evaluation.
 
-- RQ1 / H1 — Reliability: Does schema validation, corrective feedback and constrained decoding improve valid tool calls and end-to-end task completion relative to native tool calling alone?
-- RQ2 / H2 — Security: Can independent policy enforcement and human approval prevent unauthorized side-effecting actions, and how much do they reduce the success of prompt-injection attempts?
+## Planned Architecture
 
+| Layer | Planned technology or approach |
+| --- | --- |
+| Frontend | React + Vite |
+| Backend | Python + FastAPI |
+| Agent orchestration | LangGraph |
+| Local model serving | Ollama / vLLM; selection subject to evaluation |
+| Application database | PostgreSQL |
+| Local retrieval | Local embeddings + pgvector |
+| Office tools | Bounded document and tabular operations |
+| Email | Provider adapters for IMAP/SMTP, Gmail API and Microsoft Graph (Outlook); explicit approval before sending |
+| Deployment | Docker Compose |
+| Automated checks | GitHub Actions |
 
-## 1.7 Research Object and Subject
+Model selection and minimum hardware requirements will be determined through comparative testing on declared hardware. Validation, authorisation and approval enforcement must operate independently of model-generated instructions.
 
-- Object of study: Corporate workflows involving office documents and business email correspondence.
-- Subject of study: Methods and software mechanisms for developing a reliable, controllable, confidentiality-oriented local LLM agent with tool access.
+Component responsibilities and detailed data flows are documented in Part 07.
 
-## 1.8 Project Scope
+## Team
 
-### Mandatory MVP
+| Member | Role label | Main responsibilities |
+| --- | --- | --- |
+| [Adilet Kabiyev](https://github.com/DudeWithaCap), SE-2415 | A | Agent core, LLM adapter, tool-call reliability, local RAG, benchmarking, CI/CD and observability |
+| [Aibek Nurtay](https://github.com/KhanOfTheMoon), SE-2405 | B | Web gateway and UI, office tools, email provider adapters, policy and approvals, audit, workspace isolation, security and deployment |
+| Both students | Shared | Tool contracts, integration, documentation, evaluation and peer review |
 
-- Local web interface: Natural-language chat, file upload/download, agent execution status, action previews, approvals and results.
-- Word (`.docx`): Read, summarize, extract structured information, fill templates, create documents and perform controlled edits.
-- Excel (`.xlsx`): Read and analyze workbooks, execute approved deterministic calculations, create and update sheets, and write validated results.
-- CSV (`.csv`): Import, analyze, filter, aggregate, edit and export tabular data as a first-class user-facing format.
-- PDF (`.pdf`): Extract and analyze text, summarize documents and use their contents in office workflows. Reliable arbitrary PDF editing and OCR of scanned files are not promised as baseline functions.
-- PowerPoint (`.pptx`): Generate and modify presentations through controlled tools, including slide text and commonly supported layout elements.
-- Secure email correspondence: Read and summarize messages using IMAP, create and edit drafts, handle appropriate attachments and deliver through SMTP only after explicit user approval; development and evaluation use synthetic messages and a local test mail server.
-- Basic local RAG: Index authorized documents, retrieve relevant passages with local embeddings and return answers with file/section references.
-- Agent execution and safeguards: Pluggable local LLM runtime, multi-step tool execution, schema validation and bounded repair/retry, deterministic policy enforcement, human approval, audit logging, workspace isolation and prompt-injection defenses.
-- Controlled deployment and evaluation: Docker Compose deployment, safeguards against unapproved external data transmission, functional/security tests and a reproducible evaluation harness.
+This table defines responsibilities. Actual contributions are recorded through commits, pull requests and submission notes.
 
-All capabilities listed above belong to the mandatory project MVP, including CSV, PDF text processing, PPTX creation/editing and basic RAG. Scope is defined by the operations stated here rather than unrestricted editing of every feature of each file format.
+## Project Tracking and Contribution Workflow
 
-### Out of scope for the initial research prototype
+Tasks are managed in the team's YouTrack project. Each work item should have an owner, expected deliverable, deadline and acceptance criteria. Its ID is included in the branch name, commit messages and pull request title.
 
-- Training a foundation LLM from scratch or requiring large-model fine-tuning to complete the MVP.
-- Enterprise SLA, production certification, high availability and broad multi-tenant deployment.
-- Live corporate mailboxes or confidential corporate datasets during development or evaluation.
-- Third-party cloud LLM APIs as a fallback; messaging platforms as the primary interface.
-- Native mobile applications, voice interaction and full ERP/CRM integrations.
+The team's workflow requires changes to `main` to go through a pull request with one formal approval from the other student. Reviews should include at least one substantive comment about the content.
 
-## 1.9 Expected Outcomes
+Example for the initial skeleton task:
 
-1. A working research prototype with local LLM inference and tested DOCX, XLSX, CSV, PDF, PPTX, RAG and email workflows.
-2. Modular architecture and implementation of reliability, tool-policy, approval, audit and workspace controls.
-3. A reproducible synthetic benchmark, repeatable evaluation scripts and comparative results for models/reliability configurations.
-4. Security test evidence covering unauthorized actions, prompt injection and outbound network traffic, including negative controls.
-5. Architecture diagrams, requirements, technical documentation, deployment instructions and a Git/YouTrack record of individual contributions.
+```text
+Branch: 101-20-build-frontend-skeleton
+Commit: 101-20: Add initial frontend and backend skeleton
+PR:     101-20: Add initial frontend and backend skeleton
+```
 
-Expected performance numbers are targets for future experiments, not demonstrated achievements.
+Supervisor review references such as `SR1` and `SR2` identify feedback from Reviews 1 and 2. Include the relevant feedback reference when a task addresses a supervisor comment.
+
+## Repository Structure
+
+| Path | Purpose |
+| --- | --- |
+| `README.MD` | Project overview, status and documentation navigation |
+| `.gitignore` | Exclusions for dependencies, temporary files and local configuration |
+| `docs/` | Proposal, evidence, literature review, requirements, architecture, plans and feedback |
+| `diagrams/` | Editable diagram sources and image exports |
+| `prototype/` | Interface prototype materials and screenshots |
+| `src/` | Existing source-code placeholder; final layout to be reconciled with the implementation plan |
+| `frontend/` | Initial frontend scaffold specified by task `101-20` |
+| `backend/` | Initial backend scaffold accompanying the frontend skeleton |
+
+The initial skeleton task specifies root-level `frontend/` and `backend/` directories with placeholder files. A runnable application, dependencies and detailed module structure are subsequent implementation deliverables.
+
+## Checkpoints
+
+The first checkpoint is planned under the annotated tag `prob-period-1`, with a submission note at `docs/submissions/prob-period-1.md`.
+
+Create the tag after the checkpoint materials have been reviewed and merged. Record outstanding work with owners and deadlines in the submission note and YouTrack.
