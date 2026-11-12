@@ -33,16 +33,16 @@ Documentation is maintained in [docs/](docs/), with supporting [diagrams](diagra
 
 | No. | Component | Status |
 | --- | --- | --- |
-| 01 | Project Proposal | Completed |
+| 01 | [Project Proposal]() | Completed |
 | 02 | [Relevance Evidence](docs/02-relevance-evidence.md) | Completed |
 | 03 | [Literature Review](docs/03-literature-review.md) | Completed |
-| 04 | Existing Systems Comparison | Completed |
-| 05 | Technology Comparison and Selection | Completed |
-| 06 | Requirements Specification | Completed |
-| 07 | Architecture Design and [Diagrams](diagrams/) | Completed |
-| 08 | Interface Prototype and [Screenshots](prototype/) | Completed |
-| 09 | Verification and Evaluation Plan | Completed |
-| 10 | Project Management and Risks | Completed |
+| 04 | [Existing Systems Comparison](docs/04-existing-systems-comparison.md) | Completed |
+| 05 | [Technology Comparison and Selection](docs/05-technology-comparison.md) | Completed |
+| 06 | [Requirements Specification](docs/06-requirements-specification.md) | Completed |
+| 07 | [Architecture Design](docs/07-architecture.md) and [Diagrams](diagrams/) | Completed |
+| 08 | [Interface Prototype](prototype/08-prototype-description.md) and [Screenshots](prototype/) | Completed |
+| 09 | [Verification and Evaluation Plan](docs/09-verification-evaluation-plan.md) | Completed |
+| 10 | [Project Management and Risks](docs/10-project-management-and-risks.md) | Completed |
 | 11 | [Supervisor Feedback Log](docs/11-supervisor-feedback-log.md) | Completed |
 
 ## Research Questions
