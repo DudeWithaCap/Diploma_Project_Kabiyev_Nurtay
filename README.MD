@@ -1,14 +1,14 @@
 # Local AI Office Agent
 
-EN: Development of a Local AI Agent for Automated Processing of Office Documents (Word, Excel) and Email Correspondence in Confidentiality-Sensitive Corporate Environments
+EN: Development of local AI agent for secure corporate document processing
 
-RU: Разработка локального ИИ-агента для автоматизированной обработки офисных документов (Word, Excel) и электронной переписки в корпоративных средах с повышенными требованиями к конфиденциальности
+RU: Разработка локального ИИ-агента для безопасной обработки документов и писем
 
-KZ: Құпиялылыққа жоғары талаптар қойылатын корпоративтік ортада кеңсе құжаттарын (Word, Excel) және электрондық хат алмасуды автоматтандырылған өңдеуге арналған жергілікті ЖИ агентін әзірлеу
+KZ: Құпия корпоративтік ортада құжаттар мен поштаны өңдеуге арналған жергілікті ЖИ агентін әзірлеу
 
 Institution: Astana IT University, School of Software Engineering  
 Supervisor: Almas Ospanov, Senior Lecturer  
-Team: Adilet Kabiyev (SE-2415) · Aibek Nurtay (SE-2405)
+Team: Adilet Kabiyev (SE-2415) · Aibek Nurtay (SE-2405)         
 Youtrack: https://diplomaproject.youtrack.cloud/projects/101
 
 ## About the Project
@@ -19,7 +19,7 @@ Users will submit natural-language tasks through a web interface, inspect genera
 
 ## Current Status
 
-Stage: analysis, design and initial project scaffolding.
+Stage: documentation enhancement, initial backend development.
 
 All eleven documentation components are completed for the current checkpoint. The repository includes project documentation, editable architecture diagrams, interface prototype screenshots and the supervisor feedback log.
 
@@ -135,4 +135,4 @@ The initial skeleton task specifies root-level `frontend/` and `backend/` direct
 
 The first checkpoint is planned under the annotated tag `prob-period-1`, with a submission note at `docs/submissions/prob-period-1.md`.
 
-Create the tag after the checkpoint materials have been reviewed and merged. Record outstanding work with owners and deadlines in the submission note and YouTrack.
+
